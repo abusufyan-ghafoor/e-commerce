@@ -1,0 +1,82 @@
+<% if user_signed_in? %>
+  <h3>Hye! you are on index page.</h3>
+  <div class="container">
+    <div class="two-column no-gutters">
+      <div class="row no-gutters">
+        <div class="left-column col-7 col-lg-8">
+          <div class="row">
+            <div class="col-lg-12 ordr-detail" style="background-color: white;">
+              <p>thffthhhnfjhmgvjtucjhgfthgvubyesrdtfgftdrsyetrdfy vgtryerthghft ghfgtr5eyhyfthfthftur gvgr5dgr </p>
+            </div>
+
+          </div><br>
+          <div class="row">
+            <div class="col-lg-12" style="background-color: lightpink;">
+              <%= form_for :order_detail, html: {class: "add-form"} do |f| %>
+
+                  <div class="field">
+                    <%= f.label :country %>
+                    <%= f.select :country, ["Pakistan", "China", "America", "Russia", "UK"] %>
+                  </div>
+                  <div class="field">
+                    <%= f.label :first_Name %>
+                    <%= f.text_field :first_name, required: true %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :last_Name %>
+                    <%= f.text_field :last_name, required: true %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :Street_Address1 %>
+                    <%= f.text_field :Street_Address1, required: true %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :Street_Address2 %>
+                    <%= f.text_field :Street_Address2, required: true %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :city %>
+                    <%= f.text_field :city, required: true %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :province %>
+                    <%= f.select :province, ["Punjab", "KPK", "Baluchistan", "Sindh", "Gilgit Baltistan"] %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :code %>
+                    <%= f.select :code, ["PK +92", "China +86", "USA +1", "RSS +7", "UK +2"] %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.label :phone %>
+                    <%= f.text_field :phone, required: true %>
+                  </div>
+
+              <%end%>
+            </div>
+          </div> <br>
+          <div class="row">
+            <div class="col-lg-12" style="background-color: lightcyan;">
+              <p>nnjksddfbfkjh,bfhskbfkdsbfhsdbfhbdhsff dsbhjbsdffsjfbfddsjhfhs  hsdb hjbfbhbfhl jncsjbfsbhfsf csdjbfsdfusdbhfsjf bccjksdnfsf </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-column col-5 col-lg-4">
+          <h5> Items: <%= @orders.item %></h5>
+          <h5> Shipping Fee:</h5>
+          <h4 style="font-weight: bold;">Total Bill:<%=  @orders.bill%> </h4>
+          <button type="button" class="btn btn-primary btn-lg">Large button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <% user_session_path %>
+<% end -%>
